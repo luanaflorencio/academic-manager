@@ -18,6 +18,6 @@ class Estudante extends Model
 
     public function disciplina()
     {
-        return $this->hasMany(Disciplna::class);
+        return $this->hasMany(Disciplina::class);
     }
 }

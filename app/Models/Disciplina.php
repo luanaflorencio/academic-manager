@@ -15,4 +15,14 @@ class Disciplina extends Model
         'professor',
         'estudantes',
     ];
+
+    public function professor()
+    {
+        return $this->belongsTo(Professor::class);
+    }
+
+    public function estudante()
+    {
+        return $this->belongsToMany(Estudante::class);
+    }
 }
