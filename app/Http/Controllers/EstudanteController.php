@@ -36,6 +36,13 @@ class EstudanteController extends Controller
     public function store(Request $request)
     {
         //
+        Estudante::create([
+            'codigo' => $request->codigo,
+            'nome' => $request->nome,
+            'cpf' => $request->cpf,
+            'nascimento' => $request->nascimento,
+        ]);
+        return redirect('dashboard');
     }
 
     /**

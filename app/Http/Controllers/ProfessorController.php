@@ -36,6 +36,13 @@ class ProfessorController extends Controller
     public function store(Request $request)
     {
         //
+        Professor::create([
+            'codigo' => $request->codigo,
+            'nome' => $request->nome,
+            'cpf' => $request->cpf,
+            'nascimento' => $request->nascimento,
+        ]);
+        return redirect('dashboard');
     }
 
     /**

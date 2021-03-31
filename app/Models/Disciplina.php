@@ -14,6 +14,7 @@ class Disciplina extends Model
         'nome',
         'professor',
         'estudantes',
+        'user_id',
     ];
 
     public function professor()
