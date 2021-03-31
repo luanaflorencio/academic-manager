@@ -19,6 +19,7 @@ class CreateDisciplinasTable extends Migration
             $table->string('nome');
             $table->string('professor');
             $table->integer('estudantes');
+            $table->integer('user_id');
             $table->timestamps();
         });
     }

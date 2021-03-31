@@ -14,6 +14,7 @@ class Professor extends Model
         'nome',
         'cpf',
         'nascimento',
+        'user_id',
     ];
 
     public function disciplina()

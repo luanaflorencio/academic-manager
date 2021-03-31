@@ -17,8 +17,9 @@ class CreateEstudantesTable extends Migration
             $table->id();
             $table->string('codigo');
             $table->string('nome');
-            $table->string('cpf');
+            $table->string('cpf')->unique();
             $table->date('nascimento');
+            $table->integer('user_id');
             $table->timestamps();
         });
     }

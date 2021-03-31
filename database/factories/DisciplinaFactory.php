@@ -23,6 +23,11 @@ class DisciplinaFactory extends Factory
     {
         return [
             //
+            'codigo' => $this->faker->numerify('CDG-#####'),
+            'nome' => $this->faker->word,
+            'professor' => $this->faker->name,
+            'estudantes' => $this->faker->numberBetween(0, 100)
+
         ];
     }
 }

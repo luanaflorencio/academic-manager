@@ -23,6 +23,10 @@ class ProfessorFactory extends Factory
     {
         return [
             //
+            'codigo' => $this->faker->numerify('CDG-#####'),
+            'nome' => $this->faker->name,
+            'cpf' => $this->faker->unique()->numerify('###.###.###-##'),
+            'nascimento' => $this->faker->date('Y_m_d')
         ];
     }
 }

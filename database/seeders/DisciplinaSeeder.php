@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
+use App\Models\Disciplina;
 use Illuminate\Database\Seeder;
 
 class DisciplinaSeeder extends Seeder
@@ -13,6 +15,11 @@ class DisciplinaSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $users = User::all();
+        foreach ($users as $user) {
+            Disciplina::factory(1)->create([
+                'user_id' => $user->id
+            ]);
+        }
     }
 }
