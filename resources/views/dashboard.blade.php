@@ -12,5 +12,26 @@
                    DALE
             </div>
         </div>
+
+        <div class="p-6 bg-white border-b border-gray-200">
+            @foreach($disciplina as $d)
+            <p>{{ $d->nome }} {{ $d->codigo }} {{ $d->professor }} {{ $d->estudantes}}</p>
+            @endforeach
+
+
+        </div>
+        <div class="p-6 bg-white border-b border-gray-200">
+
+            @foreach($professor as $p)
+            <p>{{ $p->nome }} {{ $p->codigo }} {{ $p->cpf }} {{ $p->nascimento }}</p>
+            @endforeach    
+        </div>
+        <div class="p-6 bg-white border-b border-gray-200">
+            @foreach($estudante as $e)
+            <p>{{ $e->nome }} {{ $e->codigo }} {{ $e->cpf }} {{ $e->nascimento }}</p>
+            @endforeach   
+        </div>
+        
+        </div>
     </div>
 </x-app-layout>
