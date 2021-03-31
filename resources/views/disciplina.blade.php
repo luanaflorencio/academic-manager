@@ -57,7 +57,7 @@ Adicionar
 </div>
     
             @foreach($disciplina as $d)
-            <p>{{ $d->nome }} {{ $d->codigo }} {{ $d->professor }} {{ $d->estudantes}}</p>
+            <p> <strong>Código:</strong> {{ $d->codigo }} <strong>Nome:</strong> {{ $d->nome }} <strong>Professor:</strong> {{ $d->professor }} <strong>Estudantes:</strong> {{ $d->estudantes}}</p>
             @endforeach
     
     

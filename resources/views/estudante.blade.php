@@ -59,7 +59,7 @@
     </div>
 
         @foreach($estudante as $e)
-        <p>{{ $e->nome }} {{ $e->codigo }} {{ $e->cpf }} {{ $e->nascimento }}</p>
+        <p> <strong>Código:</strong> {{ $e->codigo }} <strong>Nome:</strong> {{ $e->nome }} <strong>CPF:</strong> {{ $e->cpf }} <strong>Data de Nascimento:</strong> {{ $e->nascimento }}</p>
         @endforeach   
     </div>
 </div>
