@@ -64,9 +64,11 @@ class EstudanteController extends Controller
      * @param  \App\Models\Estudante  $estudante
      * @return \Illuminate\Http\Response
      */
-    public function edit(Estudante $estudante)
+    public function edit($id)
     {
         //
+        $estudante = Estudante::findOrFail($id);
+        return view('edit-estud', compact('estudante'));
     }
 
     /**
@@ -76,9 +78,16 @@ class EstudanteController extends Controller
      * @param  \App\Models\Estudante  $estudante
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Estudante $estudante)
+    public function update(Request $request, $id)
     {
         //
+        Estudante::findOrFail($id)->update([
+            'codigo' => $request->codigo,
+            'nome' => $request->nome,
+            'cpf' => $request->cpf,
+            'nascimento' => $request->nascimento,
+        ]);
+        return redirect()->to('/dashboard')->with('update', 'Dados de Estudante editado com sucesso!');
     }
 
     /**

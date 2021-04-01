@@ -36,4 +36,16 @@ Route::get('/estudante/delete/{id}', [EstudanteController::class, 'destroy'])->n
 
 Route::get('/professor/delete/{id}', [ProfessorController::class, 'destroy'])->name('del-prof');
 
+Route::get('/disciplina/edit/{id}', [DisciplinaController::class, 'edit']);
+
+Route::post('/disciplina/update/{id}', [DisciplinaController::class, 'update']);
+
+Route::get('/estudante/edit/{id}', [EstudanteController::class, 'edit']);
+
+Route::post('/estudante/update/{id}', [EstudanteController::class, 'update']);
+
+Route::get('/professor/edit/{id}', [ProfessorController::class, 'edit']);
+
+Route::post('/professor/update/{id}', [ProfessorController::class, 'update']);
+
 require __DIR__ . '/auth.php';

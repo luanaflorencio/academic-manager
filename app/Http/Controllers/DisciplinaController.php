@@ -45,7 +45,7 @@ class DisciplinaController extends Controller
             'estudantes' => $request->estudantes,
             'user_id' => Auth::user()->id,
         ]);
-        return redirect('dashboard');
+        return redirect()->back()->with('create', 'Disciplina criada com sucesso!');
     }
 
     /**
@@ -69,7 +69,7 @@ class DisciplinaController extends Controller
     {
         //
         $disciplina = Disciplina::findOrFail($id);
-        return view('edit', compact('disciplina'));
+        return view('edit-disc', compact('disciplina'));
     }
 
     /**
@@ -79,9 +79,16 @@ class DisciplinaController extends Controller
      * @param  \App\Models\Disciplina  $disciplina
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Disciplina $disciplina)
+    public function update(Request $request, $id)
     {
         //
+        Disciplina::findOrFail($id)->update([
+            'codigo' => $request->codigo,
+            'nome' => $request->nome,
+            'professor' => $request->professor,
+            'estudantes' => $request->estudantes,
+        ]);
+        return redirect()->to('/dashboard')->with('update', 'Disciplina editada com sucesso!');
     }
 
     /**

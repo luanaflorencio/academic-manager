@@ -64,9 +64,11 @@ class ProfessorController extends Controller
      * @param  \App\Models\Professor  $professor
      * @return \Illuminate\Http\Response
      */
-    public function edit(Professor $professor)
+    public function edit($id)
     {
         //
+        $professor = Professor::findOrFail($id);
+        return view('edit-prof', compact('professor'));
     }
 
     /**
@@ -76,9 +78,16 @@ class ProfessorController extends Controller
      * @param  \App\Models\Professor  $professor
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Professor $professor)
+    public function update(Request $request, $id)
     {
         //
+        Professor::findOrFail($id)->update([
+            'codigo' => $request->codigo,
+            'nome' => $request->nome,
+            'cpf' => $request->cpf,
+            'nascimento' => $request->nascimento,
+        ]);
+        return redirect()->to('/dashboard')->with('update', 'Dados de Professor editado com sucesso!');
     }
 
     /**
