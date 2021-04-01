@@ -44,7 +44,7 @@ class EstudanteController extends Controller
             'nascimento' => $request->nascimento,
             'user_id' => Auth::user()->id,
         ]);
-        return redirect('dashboard');
+        return redirect()->back()->with('create', 'Estudante adicionado com sucesso!');
     }
 
     /**
