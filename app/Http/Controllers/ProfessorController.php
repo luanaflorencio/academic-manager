@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Professor;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProfessorController extends Controller
 {
@@ -41,6 +42,7 @@ class ProfessorController extends Controller
             'nome' => $request->nome,
             'cpf' => $request->cpf,
             'nascimento' => $request->nascimento,
+            'user_id' => Auth::user()->id,
         ]);
         return redirect('dashboard');
     }

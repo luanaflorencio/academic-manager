@@ -13,9 +13,9 @@ class DashboardController extends Controller
     //
     public function dashboard()
     {
-        $estudante = Estudante::all();
-        $professor = Professor::all();
-        $disciplina = Disciplina::all();
+        $estudante = Estudante::orderBy('created_at', 'desc')->get();
+        $professor = Professor::orderBy('created_at', 'desc')->get();
+        $disciplina = Disciplina::orderBy('created_at', 'desc')->get();
         return view('dashboard', compact('estudante', 'professor', 'disciplina'));
     }
 }

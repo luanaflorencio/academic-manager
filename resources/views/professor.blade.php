@@ -6,16 +6,16 @@
 
         <div class="mb-4 mt-3">
             <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">
         Adicionar
         </button>
     
         <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Novo Professor</h5>
+                        <h5 class="modal-title" id="addModalLabel">Novo Professor</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -41,15 +41,16 @@
                             <div>
                             <x-label for="nascimento" :value="__('Data de Nascimento')" />
     
-                            <x-input id="nascimento" class="block mt-1 w-full" type="text" name="nascimento" :value="old('nascimento')" required autofocus />
+                            <x-input id="nascimento" class="block mt-1 w-full" type="date" name="nascimento" :value="old('nascimento')" required autofocus />
                         </div>
-                    </form>
+                    
     
                     </div>
                 <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-primary">Salvar</button>
+                <button type="submit" class="btn btn-primary">Salvar</button>
                 </div>
+            </form>
                 </div>
             </div>
         </div>

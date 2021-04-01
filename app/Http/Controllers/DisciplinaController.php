@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Disciplina;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 class DisciplinaController extends Controller
 {
@@ -41,6 +43,7 @@ class DisciplinaController extends Controller
             'nome' => $request->nome,
             'professor' => $request->professor,
             'estudantes' => $request->estudantes,
+            'user_id' => Auth::user()->id,
         ]);
         return redirect('dashboard');
     }
