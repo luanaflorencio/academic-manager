@@ -65,9 +65,11 @@ class DisciplinaController extends Controller
      * @param  \App\Models\Disciplina  $disciplina
      * @return \Illuminate\Http\Response
      */
-    public function edit(Disciplina $disciplina)
+    public function edit($id)
     {
         //
+        $disciplina = Disciplina::findOrFail($id);
+        return view('edit', compact('disciplina'));
     }
 
     /**
@@ -88,8 +90,10 @@ class DisciplinaController extends Controller
      * @param  \App\Models\Disciplina  $disciplina
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Disciplina $disciplina)
+    public function destroy($id)
     {
         //
+        Disciplina::findOrFail($id)->delete();
+        return redirect()->back()->with('success', 'Disciplina excluída com sucesso!');
     }
 }

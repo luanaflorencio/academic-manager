@@ -87,8 +87,10 @@ class EstudanteController extends Controller
      * @param  \App\Models\Estudante  $estudante
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Estudante $estudante)
+    public function destroy($id)
     {
         //
+        Estudante::findOrFail($id)->delete();
+        return redirect()->back()->with('success', 'Estudante excluído com sucesso!');
     }
 }

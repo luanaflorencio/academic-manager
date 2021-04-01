@@ -18,8 +18,6 @@
         <div class="">
             @include('estudante')
         </div>
-
-                
         </div>
     </div>
 </x-app-layout>

@@ -87,8 +87,10 @@ class ProfessorController extends Controller
      * @param  \App\Models\Professor  $professor
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Professor $professor)
+    public function destroy($id)
     {
         //
+        Professor::findOrFail($id)->delete();
+        return redirect()->back()->with('success', 'Professor excluído com sucesso!');
     }
 }

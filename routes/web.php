@@ -30,5 +30,10 @@ Route::post('/professor', [ProfessorController::class, 'store']);
 
 Route::post('/estudante', [EstudanteController::class, 'store']);
 
+Route::get('/disciplina/delete/{id}', [DisciplinaController::class, 'destroy'])->name('del-disc');
+
+Route::get('/estudante/delete/{id}', [EstudanteController::class, 'destroy'])->name('del-estudante');
+
+Route::get('/professor/delete/{id}', [ProfessorController::class, 'destroy'])->name('del-prof');
 
 require __DIR__ . '/auth.php';
